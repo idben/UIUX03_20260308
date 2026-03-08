@@ -26,7 +26,7 @@
       background-color: #29d306;
     }
   </style>
-  <title>timeline 01</title>
+  <title>timeline 03</title>
 </head>
 
 <body>
@@ -40,6 +40,9 @@
     const box1 = document.querySelector(".box1");
     const position = window.innerWidth - box1.getBoundingClientRect().width - 16;
     console.log(position);
+
+    gsap.registerPlugin(GSDevTools);
+    GSDevTools.create();
 
     const tl = gsap.timeline();
     tl.to(".box1", {
