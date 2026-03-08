@@ -40,6 +40,20 @@
     const position = window.innerWidth - box1.getBoundingClientRect().width - 16;
     console.log(position);
 
+    const tl = gsap.timeline();
+    tl.to(".box1", {
+      x: position,
+      duration: 1
+    });
+    tl.to(".box2", {
+      x: position,
+      duration: 2
+    });
+    tl.to(".box3", {
+      x: position,
+      duration: 1
+    });
+
   </script>
 </body>
 
