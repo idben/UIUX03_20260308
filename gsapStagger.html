@@ -64,6 +64,21 @@
           stagger: 0.2
         }
       );
+
+      // start/end/center/random
+      gsap.to(
+        ".container2 .box",
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.5,
+          stagger: {
+            each: 0.2,
+            from: "end"
+          },
+          delay: 3
+        }
+      );
     });
   </script>
 </body>
