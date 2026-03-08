@@ -7,8 +7,8 @@
   <style>
     .circle {
       position: absolute;
-      left: -1000px;
-      top: -1000px;
+      left: 0px;
+      top: 0px;
       width: 100px;
       height: 100px;
       background-color: #fc7979;
@@ -28,7 +28,7 @@
     window.addEventListener("click", (event) => {
       if (ary.length < 2) {
         ary.push([event.pageX, event.pageY])
-        if(ary.length == 2){
+        if (ary.length == 2) {
           gsap.fromTo(
             ".circle",
             {
