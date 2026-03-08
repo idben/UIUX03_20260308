@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-hant-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .circle {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 100px;
+      height: 100px;
+      background-color: #fc7979;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+  <title>gsap.fromTo()</title>
+</head>
+
+<body>
+  <div class="circle"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
+  <script>
+    let ary = [];
+
+    window.addEventListener("click", (event) => {
+      if (ary.length < 2) {
+        ary.push([event.pageX, event.pageY])
+        if (ary.length == 2) {
+          gsap.fromTo(
+            ".circle",
+            {
+              x: ary[0][0],
+              y: ary[0][1]
+            },
+            {
+              x: ary[1][0],
+              y: ary[1][1],
+              duration: 1,
+              onComplete: function () {
+                ary = [];
+              }
+            }
+          );
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
