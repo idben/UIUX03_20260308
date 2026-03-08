@@ -24,7 +24,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
   <script>
-    const ary = [];
+    let ary = [];
 
     window.addEventListener("click", (event) => {
       if (ary.length < 2) {
@@ -39,7 +39,11 @@
             {
               x: ary[1][0],
               y: ary[1][1],
-              duration: 1
+              duration: 1,
+              onComplete: function () {
+                console.log("動畫完成");
+                ary = [];
+              }
             }
           );
         }
