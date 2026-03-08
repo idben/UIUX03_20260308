@@ -18,14 +18,38 @@
 
 <body>
   <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+  <div class="circle circle3"></div>
+  <div class="circle circle4"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
   <script>
     requestIdleCallback(function () {
       gsap.to(".circle1", {
         x: 300,
-        duration: 2,
-        ease: "back.out(1.7)"
+        duration: 1,
+        ease: "linear "
+      });
+
+      gsap.to(".circle2", {
+        x: 300,
+        duration: 1,
+        ease: "power1.out",
+        delay: 1
+      });
+
+      gsap.to(".circle3", {
+        x: 300,
+        duration: 1,
+        ease: "back.out(1.7)",
+        delay: 2
+      });
+
+      gsap.to(".circle4", {
+        x: 300,
+        duration: 1,
+        ease: "elastic.out(1, 0.3)",
+        delay: 3
       });
     });
   </script>
